@@ -23,8 +23,6 @@ https://docs.nativescript.org/ui/components.
     You can learn more about the NativeScript core theme at https://github.com/nativescript/theme
     -->
     <StackLayout class="p-20">
-        <Label class="h1 text-center my-label" text="Tap the button" />
-        <Button text="TAP" tap="ontap" class="-primary" />
-        <Label text="{{ message }}" class="h2 text-center" textWrap="true" />
+        <Label class="my-label" text="Second Page" />
     </StackLayout>
 </Page>

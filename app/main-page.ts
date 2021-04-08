@@ -4,9 +4,10 @@ a code-behind file. The code-behind is a great place to place your view
 logic, and to set up your page’s data binding.
 */
 
-import { EventData, Page } from '@nativescript/core'
+import { EventData, Frame, Page } from '@nativescript/core'
 import { HelloWorldModel } from './main-view-model'
 
+let page: Page;
 // Event handler for Page 'navigatingTo' event attached in main-page.xml
 export function navigatingTo(args: EventData) {
   /*
@@ -14,7 +15,7 @@ export function navigatingTo(args: EventData) {
     view the API reference of the Page to see what’s available at
     https://docs.nativescript.org/api-reference/classes/_ui_page_.page.html
     */
-  const page = <Page>args.object
+  page = <Page>args.object
 
   /*
     A page’s bindingContext is an object that should be used to perform
@@ -27,4 +28,8 @@ export function navigatingTo(args: EventData) {
     https://docs.nativescript.org/core-concepts/data-binding.
     */
   page.bindingContext = new HelloWorldModel()
+}
+
+export function ontap() {
+  Frame.topmost().navigate("second-page");
 }
